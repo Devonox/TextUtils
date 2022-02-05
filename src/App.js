@@ -33,12 +33,26 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar title="TextUtils"AboutText="AboutUs"HomeText="Home"mode={mode}toggleMode={toggleMode}/>
+        <Navbar
+          title="TextUtils"
+          AboutText="AboutUs"
+          HomeText="Home"
+          mode={mode}
+          toggleMode={toggleMode}
+        />
         <Alerts alert={alert} />
         <div className="container my-3">
           <Routes>
-            <Route path="/About" element={<About mode={mode}/>}></Route>
-            <Route path="/*" element={<TextForm heading="Enter Text To Analyze Below" mode={mode} />}></Route>
+            <Route path="/About" element={<About mode={mode} />}></Route>
+            <Route
+              path="/*"
+              element={
+                <TextForm
+                  heading="TextUtils Word Counter Character Counter"
+                  mode={mode}
+                />
+              }
+            ></Route>
           </Routes>
         </div>
       </BrowserRouter>
