@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function About(props) {
 
@@ -16,7 +16,7 @@ export default function About(props) {
                 data-bs-target="#collapseOne"
                 aria-expanded="true"
                 aria-controls="collapseOne"
-                style={{color: "black", fontSize: 20}}
+                style={{color: "black", fontSize: 20,backgroundColor: props.mode === "dark" ? "rgb(245 148 148)" : "#e7f1ff"}}
               >
                 <b> Hi! My name is Arghadeep Mandal</b>
               </button>
