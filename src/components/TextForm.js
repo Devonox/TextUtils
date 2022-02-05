@@ -23,6 +23,15 @@ export default function TextForm(props) {
     }
     return count;
   };
+  const handleCopy = () => {
+    let textArea = document.createElement("textarea");
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textArea);
+    props.handleAlert("Text Copied", "success");
+  };
 
   return (
     <>
@@ -49,6 +58,7 @@ export default function TextForm(props) {
           type="button"
           className="btn btn-primary mx-2 my-1"
           onClick={handleUpClick}
+          disabled={text.length === 0}
         >
           Convert To UppperCase
         </button>
@@ -56,6 +66,7 @@ export default function TextForm(props) {
           type="button"
           className="btn btn-primary mx-2 my-1"
           onClick={handleLowClick}
+          disabled={text.length === 0}
         >
           Convert To LowerCase
         </button>
@@ -65,8 +76,17 @@ export default function TextForm(props) {
           onClick={() => {
             setText(text.split(" ").join(""));
           }}
+          disabled={text.length === 0}
         >
           Remove Extra Spaces
+        </button>
+        <button
+          type="button"
+          className="btn btn-primary mx-2 my-1"
+          onClick={() => {handleCopy()}}
+          disabled={text.length === 0}
+          >
+          Copy Text
         </button>
       </div>
       <div

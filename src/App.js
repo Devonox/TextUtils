@@ -48,7 +48,7 @@ function App() {
               path="/*"
               element={
                 <TextForm
-                  heading="TextUtils Word Counter Character Counter"
+                  heading="TextUtils"
                   mode={mode}
                 />
               }
